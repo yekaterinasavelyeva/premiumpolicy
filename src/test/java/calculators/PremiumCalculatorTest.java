@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -36,6 +37,13 @@ class PremiumCalculatorTest {
 
 		BigDecimal premium = premiumCalculator.calculate(policy);
 		assertEquals(expectedPremium, premium);
+	}
+
+	@Test
+	void testWithEmptyRiskCalculators() {
+		PremiumCalculator calculator = new PremiumCalculator(Collections.emptyList());
+		BigDecimal insuredSum = calculator.calculate(new Policy("LV20-02-100000-2", PolicyStatus.REGISTERED, CalculatorTestData.getAssetSetTwo()));
+		assertEquals(BigDecimal.valueOf(0.00).setScale(DEFAULT_SCALE, RoundingMode.HALF_UP), insuredSum);
 	}
 
 	private static Stream<Arguments> getDifferentCombinations() {
