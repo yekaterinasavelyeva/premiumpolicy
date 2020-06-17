@@ -1,0 +1,30 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore IntelliJ
+.idea
+
+# Ignore eclipse
+.project
+.classpath
+.settings
+
+# visual studio code
+.vscode
+
+# Ignore Gradle build output directory
+build
+.bin
+.lock
+
+# tmp
+=======
+/tmp/
+/bin/
+
+
+# Project exclude paths
+/out/
+/out/production/classes/
+/out/test/classes/
+/war/
