@@ -23,4 +23,5 @@
 3. For collections Collection interface was chosen, so the implementation can be adjusted as needed.
 4. To calculate premium policy there should be method calculate(Property property) called from PremiumPolicy class object, 
     which gets initialized with needed calculators to acknowledge the risks and provide right calculation.
-5. Test implemented.
+5. Test implemented. Usually put all data right there after tests, 
+    but this time in order not to pollute test classes and to reuse data created separate Test Data class.
